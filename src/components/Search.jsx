@@ -23,7 +23,7 @@ export default function Search(props) {
                 url: 'https://wft-geo-db.p.rapidapi.com/v1/geo/countries/RU/regions/MOS/cities',
                 params: { limit: '10' },
                 headers: {
-                    'X-RapidAPI-Key': 'c9979b5799msh55755f6b659c677p15fefdjsn6c7b5baab11f',
+                    'X-RapidAPI-Key': '',
                     'X-RapidAPI-Host': 'wft-geo-db.p.rapidapi.com'
                 }  
             };
