@@ -1,5 +1,5 @@
 function search(str, list) {
-    console.log(str)
+   
     let searchresult = list.filter(list =>
         list.city.toLowerCase().indexOf(str.toLowerCase()) != -1
     );
@@ -26,6 +26,6 @@ export default function Cities(props) {
     }
 
     return (
-        <ul>{citiesList}</ul>
+        <ul className="cities-ul">{citiesList}</ul>
     )
 }
