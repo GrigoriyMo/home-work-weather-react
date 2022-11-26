@@ -6,6 +6,11 @@ import Cities from './Cities'
 export default function Searchlist(props) {
 
     const [cities, setCities] = useState(null);
+    const [citySearched, setCitySearched] = useState(null);
+
+    function handleSearchInput(city){
+        setCitySearched( {citySearched:city} );
+    }
 
     useEffect(() => {
         const localStorageCities = localStorage.getItem('cities');
@@ -36,13 +41,13 @@ export default function Searchlist(props) {
         } else {
             fetchCities();
         }
-
+        
     }, []);
 
     return (
         <div className="search-list">
-            <Search />
-            <Cities cities={cities}/>
+            <Search onSearchInput={handleSearchInput}/>
+            <Cities cities={cities} searchString={citySearched}/>
         </div>
     )
-}
+} 

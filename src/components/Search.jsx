@@ -2,15 +2,19 @@ import React, { useState, useEffect } from "react";
 import { Flex, Button, TextField, defaultTheme, Provider } from '@adobe/react-spectrum';
 
 export default function Search(props) {
-    const [city, setCity] = useState('');
+    
 
     function handleChange(event) {
-        setCity( event );
+        props.onSearchInput(event);
     }
 
     function handleSubmit(event) {
         event.preventDefault();
     }
+
+    useEffect(() => {
+        
+    }, []);
 
     return (
         <Provider theme={defaultTheme}>
@@ -19,7 +23,7 @@ export default function Search(props) {
                     <Flex direction="column" gap="size-100" alignItems="center">
 
                         <label> <p> Название города:</p>
-                            <TextField value={city} onChange={ e => handleChange(e)}>
+                            <TextField  onChange={e => handleChange(e)}>
                             </TextField>
                         </label>
 
