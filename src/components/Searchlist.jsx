@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from "react";
 import Axios from 'axios';
-import Search from './Search'
-import Cities from './Cities'
+import Search from './Search' //компомент формы поиска
+import Cities from './Cities' //компонент который рендерит список городов
 
 export default function Searchlist(props) {
 
     const [cities, setCities] = useState(null);
     const [citySearched, setCitySearched] = useState(null);
 
-    function handleSearchInput(city){
-        setCitySearched( {citySearched:city} );
+    function handleSearchInput(city) {
+        setCitySearched({ citySearched: city });
     }
 
     useEffect(() => {
@@ -41,13 +41,13 @@ export default function Searchlist(props) {
         } else {
             fetchCities();
         }
-        
+
     }, []);
 
     return (
         <div className="search-list">
-            <Search onSearchInput={handleSearchInput}/>
-            <Cities cities={cities} searchString={citySearched}/>
+            <Search onSearchInput={handleSearchInput} />
+            <Cities cities={cities} searchString={citySearched} />
         </div>
     )
 } 
