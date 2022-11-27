@@ -19,7 +19,7 @@ function App() {
       </div>
       <Routes>
         <Route path="/" element={<Searchlist />} />
-        <Route path="/weather" element={<CityWeatherPage />} />
+        <Route path="/weather/:city" element={<CityWeatherPage />} />
       </Routes>
 
     </div>
