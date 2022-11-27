@@ -15,7 +15,7 @@ export default function Cities(props) {
     if (props.cities) {
         citiesList = props.cities.cities.data.map((elem) =>
             <li className="city-elem" key={elem.id}>
-                <Link to={'/weather/'+elem.city} >
+                <Link to={'/weather/' + elem.city} >
                     {elem.city}
                 </Link>
             </li>
@@ -27,7 +27,10 @@ export default function Cities(props) {
     if (props.searchString && props.cities) {
 
         citiesList = (search(props.searchString.citySearched, props.cities.cities.data)).map((elem) =>
-            <li className="city-elem" key={elem.id}>{elem.city}</li>
+            <li className="city-elem" key={elem.id}>
+                <Link to={'/weather/' + elem.city} >
+                    {elem.city}
+                </Link></li>
         )
     }
 

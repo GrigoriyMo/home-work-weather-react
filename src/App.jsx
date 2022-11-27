@@ -14,7 +14,9 @@ function App() {
     <div className="App">
       <div>
         <a >
-          <img src={logo} className="logo react" alt="React logo" />
+          <Link to={'/'} >
+            <img src={logo} className="logo react" alt="React logo" />
+          </Link>
         </a>
       </div>
       <Routes>
